@@ -1,0 +1,29 @@
+t mapped as 3
+v mapped as 4
+x mapped as 0
+y mapped as 1
+z mapped as 2
+BEFORE
+t 5
+v 8
+x 1
+y 2
+z 3
+R_lock [ Tid = 1 , 0]
+R_lock [ Tid = 2 , 1]
+upgrade [Tid = 2 , 1]
+unlock [Tid = 2, 1]
+R_lock [ Tid = 3 , 3]
+R_lock [ Tid = 3 , 4]
+upgrade [Tid = 3 , 4]
+unlock [Tid = 3, 3]
+unlock [Tid = 3, 4]
+upgrade [Tid = 1 , 0]
+unlock [Tid = 1, 0]
+AFTER
+t 5
+v 8
+x 1
+y 14
+z 3
+ALL TASKS COMPLETED SUCCESSFULLY
